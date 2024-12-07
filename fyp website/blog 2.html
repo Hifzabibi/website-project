@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compiler Design Fundamentals</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #1E293B;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .blog-section-2 {
+      width: 80%;
+      margin: 30px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-content h1 {
+      color: #ff4b2b;
+      font-size: 28px;
+    }
+
+    .blog-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .comments-section {
+      margin-top: 40px;
+    }
+
+    .comment-card {
+      background-color: #f8f8f8;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .comment-card h4 {
+      margin: 0;
+      color: #0056b3;
+    }
+
+    .comment-card p {
+      margin-top: 8px;
+      font-size: 1em;
+    }
+
+    .leave-comment {
+      margin-top: 30px;
+    }
+
+    .leave-comment h3 {
+      color: #ff4b2b;
+    }
+
+    .leave-comment form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .leave-comment input,
+    .leave-comment textarea {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .submit-btn {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #004494;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="#">
+        <img
+          src="../fyp website//images//header-logo.png"
+          alt="navbar-logo"
+        />
+      </a>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="how it work.html">How It Works</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact us .html">Contact Us</a></li>
+    </ul>
+    <div class="navbar-buttons">
+      <a href="login.html" class="btn sign-in">Log In</a>
+      <a href="sign up.html" class="btn sign-up">Sign Up</a>
+    </div>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <script>
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      document.querySelector(".navbar").classList.toggle("active")
+    })
+  </script>
+
+  <!-- Header Section -->
+  <header>Compiler Design Fundamentals</header>
+
+  <!-- Blog Section -->
+  <section class="blog-section-2">
+    <div class="blog-content">
+      <h1>Understanding Compiler Design</h1>
+      <p>Compiler design is an essential aspect of computer science. It involves the translation of high-level programming languages into machine code that a computer can understand and execute.</p>
+
+      <p>This process involves several stages, including lexical analysis, syntax analysis, semantic analysis, optimization, and code generation. Each stage plays a critical role in ensuring that the source code is correctly and efficiently transformed.</p>
+
+      <p>Understanding compiler design helps developers grasp how programming languages are built and the complexities involved in transforming human-readable code into instructions for a computer.</p>
+
+      <p>Key components of a compiler include the lexical analyzer, parser, semantic analyzer, intermediate code generator, optimizer, and code generator. Each part works together to convert source code into executable machine code.</p>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comments-section">
+      <h3>Comments</h3>
+      <div id="comments-container">
+        <div class="comment-card">
+          <h4>Ali Khan</h4>
+          <p>Very insightful explanation about compiler stages. Thanks for sharing!</p>
+        </div>
+        <div class="comment-card">
+          <h4>Sara Ahmed</h4>
+          <p>Clear and concise! Helped me understand lexical and syntax analysis better.</p>
+        </div>
+        <div class="comment-card">
+          <h4>John Doe</h4>
+          <p>I appreciate the breakdown of complex concepts into simple terms. Great blog!</p>
+        </div>
+        <div class="comment-card">
+          <h4>Fatima Sheikh</h4>
+          <p>Well-written post! It made compiler design less intimidating.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leave a Comment Section -->
+    <div class="leave-comment">
+      <h3>Leave a Comment</h3>
+      <form id="comment-form">
+        <input type="text" id="commenter-name" placeholder="Your Name" required />
+        <textarea id="comment-text" rows="4" placeholder="Your Comment" required></textarea>
+        <button type="submit" class="submit-btn">Submit Comment</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Handle comment submission
+    document.getElementById('comment-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Get form data
+      const name = document.getElementById('commenter-name').value;
+      const comment = document.getElementById('comment-text').value;
+
+      // Create new comment card
+      const newComment = document.createElement('div');
+      newComment.classList.add('comment-card');
+      newComment.innerHTML = `<h4>${name}</h4><p>${comment}</p>`;
+
+      // Append to comments container
+      document.getElementById('comments-container').appendChild(newComment);
+
+      // Clear form
+      document.getElementById('comment-form').reset();
+    });
+  </script>
+  
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- About Us Section -->
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>
+            We are a dedicated learning platform offering a variety of online
+            courses to help you develop skills and grow in your career. Our
+            mission is to provide affordable and accessible education for
+            everyone.
+          </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="footer-column">
+          <h3>Contact Information</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Learning Street, Education
+            City
+          </p>
+          <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+          <p><i class="fas fa-envelope"></i> support@learnplatform.com</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        &copy; 2024 LearnPlatform. All rights reserved.
+      </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fcf9f9;
+}
+
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 2em;
+  background-color: #1E293B;
+  /* Blue background */
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  /* Include padding in the width */
+  position: sticky;
+  /* Make the navbar sticky */
+  top: 0;
+  /* Position at the top of the page */
+  z-index: 1000;
+  /* Ensure it stays on top of other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Optional shadow for better visibility */
+}
+
+
+.navbar-logo a {
+  width: 80px;
+  display: flex;
+}
+
+.navbar-logo a img {
+  width: 100%;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-menu li {
+  margin: 0 1.0em;
+  /* Increased spacing for better clarity */
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  transition: color 0.3s;
+  font-size: 1em;
+}
+
+.navbar-menu a:hover {
+  color: #ff0000;
+  /* Red color on hover */
+}
+
+.navbar-menu .active {
+  color: #ff0000;
+  /* Red color for the active (Home) link */
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 1.5em;
+  /* Increased button gap for better spacing */
+}
+
+.btn {
+  padding: 0.7em 1.5em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1em;
+  border-radius: 4px;
+  /* Added rounded corners for buttons */
+}
+
+.sign-in {
+  background-color: #ff0000;
+  /* Red Sign In button */
+  color: white;
+}
+
+.sign-in:hover {
+  background-color: white;
+  color: #ff0000;
+}
+
+.sign-up {
+  background-color: #ffffff;
+  /* White Sign Up button */
+  color: #ff0000;
+  border: 2px solid #1E293B;
+}
+
+.sign-up:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Full-width background */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1E293B;
+  /* Blue background for full width */
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+
+  .navbar-menu,
+  .navbar-buttons {
+    display: none;
+  }
+
+  .navbar.active .navbar-menu,
+  .navbar.active .navbar-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E293B;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1em 0;
+  }
+
+  .navbar-menu li {
+    margin: 0.5em 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Styles for Medium Screens (768px - 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .navbar {
+    padding: 1em 3em;
+    /* More padding for mid-sized screens */
+  }
+
+  .navbar-menu {
+    font-size: 1.1em;
+    /* Slightly larger font size for readability */
+  }
+}
+
+
+
+
+
+
+
+/* Hero Section Styling */
+
+.hero-section {
+  position: relative;
+  background-image: url('images/heroimage1\ \(2\).jpeg');
+  /* Replace 'your-image.jpg' with your background image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  /* Overlay color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  color: white;
+  text-align: center;
+  padding: 0 1em;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  max-width: 600px;
+}
+
+.read-more {
+  background-color: #ff0000;
+  /* Red button color */
+  color: white;
+  padding: 0.8em 1.5em;
+  border: 2px solid #ff0000;
+  /* Add border to prevent "shift" during hover */
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+  /* Optional for a rounded look */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth transitions */
+}
+
+.read-more:hover {
+  background-color: white !important;
+  /* Changes background to white */
+  color: #ff0000;
+  /* Changes text to red */
+  border: 2px solid white;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+}
+
+
+
+
+/* About Section Styling */
+.about-section {
+  padding: 5em 2em;
+  color: #1E293B;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  /* position: absolute; */
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+  background: rgba(224, 224, 224, 0.3);
+  /* Dark overlay for readability */
+  /* border-radius: 10px; */
+  /* z-index: 1; */
+}
+
+/* Container for about section */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3em;
+  flex-wrap: wrap;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInContainer 1.5s ease-out forwards;
+  /* Smooth fade-in effect */
+}
+
+/* Animation for the container */
+@keyframes fadeInContainer {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Left Section - About Content */
+.about-content {
+  flex: 1;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 1.1s ease-out forwards 1.1s;
+  z-index: 2;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-content h2 {
+  font-size: 2.5em;
+  color: #000;
+  margin-bottom: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+}
+
+.about-content p {
+  font-size: 1.1em;
+  color: black;
+  line-height: 1.8;
+  margin-bottom: 2em;
+}
+
+.join-us {
+  background-color: #1E293B;
+  /* Vibrant #1E293B button */
+  color: white;
+  padding: 0.8em 2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 1s, background-color 1s;
+}
+
+.join-us:hover {
+  background-color: #ff0000;
+  transform: scale(1.1);
+  /* Slight zoom-in on hover */
+}
+
+/* Right Section - Info Boxes */
+.about-info-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  flex: 1;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideInRight 1s ease-out forwards;
+  /* Delayed slide-in */
+  z-index: 2;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.info-box {
+  background-color: #1E293B;
+  /* Bold dark  */
+  color: white;
+  padding: 1.5em;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  /* Smooth transition for both zoom and background color */
+  cursor: pointer;
+}
+
+.info-box:hover {
+  background-color: #1E293B;
+  transform: scale(1.1);
+  /* Zoom effect */
+}
+
+.icon {
+  font-size: 2.5em;
+  margin-bottom: 0.8em;
+  display: block;
+}
+
+.info-box h3 {
+  font-size: 1.4em;
+  margin-top: 0.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-info-boxes {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .about-content h2 {
+    font-size: 2.2em;
+  }
+
+  .about-content p {
+    font-size: 1em;
+  }
+
+  .join-us {
+    font-size: 1.1em;
+  }
+}
+
+
+
+
+
+/* Courses Section Styling */
+.courses-section {
+  padding: 4em 1em;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.courses-section h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 1.5em;
+  animation: fadeIn 0.5s ease-in-out;
+  /* Animation for heading */
+}
+
+/* Center the courses section and set maximum width */
+.courses-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  /* Reduced gap between columns */
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Individual Course Card Styling */
+.course-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  width: calc(33.333% - 0.67em);
+  /* Adjust width to fit three columns */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Transition for scaling effect */
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  /* Hover effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  /* Enhanced shadow on hover */
+}
+
+.course-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+}
+
+/* Course Label Styling */
+.course-label {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 0.3em 0.8em;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+}
+
+.course-label.free {
+  background-color: #1E293B;
+  /* Green for Free */
+}
+
+.course-label.paid {
+  background-color: #ff0000;
+  /* Red for Paid */
+}
+
+.course-teacher,
+.course-price,
+.course-date {
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.course-teacher {
+  color: #1E293B;
+}
+
+.course-price {
+  color: red;
+}
+
+.course-date {
+  color: black;
+  font-weight: bold;
+}
+
+/* Course Title Styling */
+.course-card h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0.5em 0;
+}
+
+/* Course Description and Date Styling */
+.course-description {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 0.5em;
+}
+
+.course-date {
+  color: black;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.enroll-btn {
+  background-color: #1E293B;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+  /* Full width button */
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.enroll-btn:hover {
+  background-color: #ff0000;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .courses-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-card {
+    width: 100%;
+    /* Full width on smaller screens */
+    margin-bottom: 1.5em;
+    /* Space between cards */
+  }
+}
+
+/* How It Works Section Styling */
+.how-it-works-section {
+  padding: 4em 1em;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.how-it-works-section h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 2em;
+  animation: fadeIn 0.5s ease-in-out;
+  /* Animation for heading */
+}
+
+/* Steps Container Styling */
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  /* Space between step cards */
+}
+
+/* Individual Step Card Styling */
+.step-card {
+  background-color: #f0f8ff;
+  /* Light blue background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2em;
+  width: calc(25% - 1.5em);
+  /* Adjust width to fit four columns */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Transition for scaling effect */
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  /* Hover effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  /* Enhanced shadow on hover */
+}
+
+/* Step Number Styling */
+.step-number {
+  background-color: #1E293B;
+  /* Blue background */
+  color: white;
+  font-size: 2em;
+  padding: 0.5em;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -25px;
+  left: calc(50% - 25px);
+}
+
+/* Step Title Styling */
+.step-card h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 1em 0;
+}
+
+/* Step Description Styling */
+.step-card p {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-card {
+    width: 100%;
+    /* Full width on smaller screens */
+    margin-bottom: 1.5em;
+    /* Space between cards */
+  }
+
+  .step-number {
+    top: -15px;
+    /* Adjust position for smaller screens */
+    left: 20px;
+  }
+}
+
+
+
+
+
+
+
+/* Background image with overlay */
+.counter-section {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  /* Full width for the background */
+  padding: 150px 20px;
+  /* Adjust padding to add space above and below the content */
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: url('images/enroll-img.jpg') no-repeat center center/cover;
+  overflow: hidden;
+}
+
+/* Overlay effect */
+.counter-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(22, 22, 22, 0.7);
+  /* Overlay color */
+  z-index: 1;
+}
+
+/* Centering the content (inside the 1200px width) */
+.counter-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  max-width: 1200px;
+  /* Limit content width */
+  margin: 0 auto;
+  /* Center the content */
+  padding: 0 20px;
+  /* Add padding for left and right space */
+}
+
+.counter-item {
+  text-align: center;
+  flex: 1;
+}
+
+.counter-item i {
+  font-size: 40px;
+  color: #1E293B;
+  margin-bottom: 10px;
+}
+
+.counter-value {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.counter-label {
+  font-size: 20px;
+}
+
+
+
+/* Blog Section Styling */
+.blog-section {
+  padding: 4em 1em;
+  background-color: #f0f4f8;
+  /* Light gray background */
+  text-align: center;
+}
+
+.blog-section h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 2em;
+  transition: color 0.3s ease;
+  /* Transition for heading */
+}
+
+/* Blog Container Styling */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2em;
+  /* Space between blog posts */
+}
+
+/* Individual Blog Post Styling */
+.blog-post {
+  background: #ffffff;
+  /* White background */
+  border-radius: 15px;
+  overflow: hidden;
+  /* Prevents content overflow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Transition for scaling effect */
+  position: relative;
+  /* For absolute positioning of the overlay */
+  cursor: pointer;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  /* Slight lift on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  /* Enhanced shadow on hover */
+}
+
+/* Blog Post Image Styling */
+.post-image {
+  overflow: hidden;
+  /* Prevents image overflow */
+}
+
+.post-image img {
+  width: 100%;
+  transition: transform 0.4s;
+  /* Smooth zoom effect */
+}
+
+/* Blog Post Content Styling */
+.post-content {
+  padding: 1.5em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.blog-post:hover .post-content {
+  background-color: #ff0000;
+  /* Light red background on hover */
+}
+
+/* Blog Title Styling */
+.post-content h3 {
+  font-size: 1.5em;
+  color: #333;
+  /* Dark color for titles */
+  margin-bottom: 0.5em;
+  transition: color 0.3s;
+  /* Smooth color transition */
+}
+
+.post-content h3:hover {
+  color: #1E293B;
+  /* Change color on hover */
+}
+
+/* Blog Description Styling */
+.post-content p {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 1em;
+}
+
+/* Read More Button Styling */
+.read-more {
+  display: inline-block;
+  background-color: #1E293B;
+  /* Bright red button */
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  /* Added transform transition */
+}
+
+.read-more:hover {
+  background-color: #ff0000;
+  /* Darker red on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-container {
+    grid-template-columns: 1fr;
+    /* 1 column on smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Contact Us Section */
+.contact-section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-section h1 {
+  font-size: 2.5em;
+}
+
+.header-section p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Contact Details */
+.details-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-box {
+  flex: 1;
+  padding: 20px;
+  background-color: #e0e7ff;
+  /* Light Blue */
+  border-radius: 8px;
+  text-align: center;
+  color: #1E293B;
+}
+
+.info-box h2 {
+  margin-bottom: 10px;
+}
+
+/* Contact Form */
+.form-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-group textarea {
+  resize: none;
+  height: 150px;
+}
+
+/* Google Map */
+.map-section {
+  margin-top: 40px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Colors and Buttons */
+.details-section h1,
+h2 {
+  color: #1E293B;
+  /* Dark Blue */
+}
+
+a {
+  color: #ff0000;
+  /* Red */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1E293B;
+  /* Dark Blue */
+}
+
+
+
+
+
+
+
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* FAQ Section Styling */
+.faq-section {
+  background-color: #fff;
+  /* White background for full screen */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #1E293B;
+  /* Dark blue */
+}
+
+.faq-description {
+  font-size: 1.1em;
+  color: #333;
+  /* Dark grey text */
+  margin-bottom: 40px;
+}
+
+/* FAQ Container */
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* FAQ Item Styles */
+.faq-item {
+  background-color: #f0f0f0;
+  /* Light grey background for FAQ items */
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Question Button */
+.faq-question {
+  width: 100%;
+  padding: 20px;
+  background-color: #1E293B;
+  /* Dark blue */
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #1E293B;
+  /* Darker shade of blue */
+}
+
+.faq-question:after {
+  content: '\276F';
+  /* Arrow icon */
+  font-size: 1.2em;
+  float: right;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question:after {
+  transform: rotate(90deg);
+  /* Rotate arrow when active */
+}
+
+/* FAQ Answer Styles */
+.faq-answer {
+  display: none;
+  /* Hidden by default */
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1em;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+  /* Show answer */
+}
+
+.faq-item.active .faq-question {
+  background-color: #ff0000;
+  /* Red when active */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .faq-section h2 {
+    font-size: 2em;
+  }
+
+  .faq-question,
+  .faq-answer {
+    font-size: 1em;
+  }
+}
+
+/* Contact Support Section */
+.contact-support {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px 0;
+}
+
+.contact-support p {
+  font-size: 1.5em;
+  color:#1E293B;
+  /* Dark blue for the text */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-support-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  /* White text */
+  background: #ff0000;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.contact-support-btn:hover {
+  background: #1E293B;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Course Page Styles */
+.course-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Header */
+.course-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #1E293B;
+  color: #fff;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.course-header:hover {
+  transform: scale(1.02);
+}
+
+.course-header h1 {
+  font-size: 2.5em;
+}
+
+.course-header p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+/* Course Content */
+.course-content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.course-video iframe {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.course-video iframe:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Course Details */
+.course-details {
+  flex: 1;
+}
+
+.course-details h2 {
+  font-size: 1.8em;
+  color: #ff0000;
+  margin-bottom: 15px;
+}
+
+.details-box {
+  background-color: #e0e7ff;
+  padding: 20px;
+  border-radius: 8px;
+  color: #1E293B;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.details-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.details-box p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* What You Will Learn */
+.what-you-will-learn {
+  margin-bottom: 40px;
+}
+
+.what-you-will-learn h2 {
+  font-size: 1.8em;
+  color: #1E293B;
+  margin-bottom: 15px;
+}
+
+.what-you-will-learn ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #333;
+}
+
+.what-you-will-learn li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.what-you-will-learn li:hover {
+  color: #ff0000;
+  ;
+}
+
+/* About the Course */
+.about-course {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-course:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-course h2 {
+  font-size: 1.8em;
+  color:#ff0000;
+  margin-bottom: 15px;
+}
+
+/* Meet the Trainer */
+.meet-the-trainer {
+  background-color: #e0e7ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.meet-the-trainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.meet-the-trainer h2 {
+  font-size: 1.8em;
+  color: #1E293B;
+  margin-bottom: 15px;
+}
+
+.meet-the-trainer p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  background-color: #1E293B;
+  /* Dark blue-gray background */
+  color: white;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  color: #ff0000;
+  /* Red for headings */
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-column p,
+.footer-column li,
+.footer-column a {
+  color: #d1d5db;
+  /* Light gray text */
+  font-size: 16px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: #ff0000;
+  /* Orange hover color */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons a {
+  font-size: 18px;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff0000;
+  /* Orange on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #2D3748;
+  /* Darker line at the top */
+  color: #A0AEC0;
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin-bottom: 20px;
+  }
+}
+

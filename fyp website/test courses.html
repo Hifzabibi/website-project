@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Courses Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to right, #ff4b2b, #0056b3);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .hero-section input {
+            width: 80%;
+            max-width: 400px;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .category-btn {
+            background-color: #ff4b2b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .category-btn:hover {
+            background-color: #ff416c;
+            transform: scale(1.05);
+        }
+
+        .category-btn.active {
+            background-color: #0056b3;
+        }
+
+        /* Course List */
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            margin: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.4s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .course-card h2 {
+            font-size: 1.5em;
+            margin: 15px 0 10px;
+            color: #0056b3;
+        }
+
+        .course-card p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .price {
+            font-weight: bold;
+            margin: 15px 0;
+            color: #ff4b2b;
+        }
+
+        .enroll-btn {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .enroll-btn:hover {
+            background-color: #004494;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Section Styling */
+        .testimonials-section {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff4b2b;
+        }
+
+        /* Testimonials Container */
+        .testimonials-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        .testimonial {
+            background-color: #f8f8f8;
+            border-radius: 15px;
+            padding: 25px;
+            flex: 0 0 300px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial p {
+            font-size: 1em;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .testimonial .student-info {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ff4b2b;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            background-color: #ff4b2b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #ff416c;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-container {
+                flex-direction: column;
+                overflow-x: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <h1>Explore Our Courses</h1>
+        <input type="text" id="search" placeholder="Search for courses..." />
+    </header>
+
+    <!-- Course Categories -->
+    <nav class="categories">
+        <button class="category-btn active" onclick="filterCourses('all')">All</button>
+        <button class="category-btn" onclick="filterCourses('ai')">Artificial Intelligence</button>
+        <button class="category-btn" onclick="filterCourses('programming')">Programming</button>
+        <button class="category-btn" onclick="filterCourses('business')">Business</button>
+    </nav>
+
+    <!-- Course Listings -->
+    <section id="course-list" class="course-list">
+        <div class="course-card" data-category="ai">
+            <img src="https://via.placeholder.com/300x150" alt="AI Basics">
+            <h2>Artificial Intelligence Basics</h2>
+            <p>Instructor: Dr. Anam Iqbal</p>
+            <p>Start Date: Jan 10, 2025</p>
+            <p class="price">Free</p>
+            <button class="enroll-btn">Enroll Now</button>
+        </div>
+
+        <div class="course-card" data-category="programming">
+            <img src="https://via.placeholder.com/300x150" alt="Advanced JavaScript">
+            <h2>Advanced JavaScript</h2>
+            <p>Instructor: John Smith</p>
+            <p>Duration: 8 Weeks</p>
+            <p class="price">$99</p>
+            <button class="enroll-btn">Enroll Now</button>
+        </div>
+
+        <div class="course-card" data-category="business">
+            <img src="https://via.placeholder.com/300x150" alt="Business Management">
+            <h2>Business Management 101</h2>
+            <p>Instructor: Sarah Lee</p>
+            <p>Duration: 10 Weeks</p>
+            <p class="price">$79</p>
+            <button class="enroll-btn">Enroll Now</button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2>What Our Students Say</h2>
+        <div class="testimonials-container" id="testimonials-container">
+            <div class="testimonial">
+                <p>"This platform has completely changed my perspective on online learning. The courses are well-structured and easy to follow."</p>
+                <div class="student-info">- Ali Khan</div>
+            </div>
+            <div class="testimonial">
+                <p>"The instructors are top-notch, and the support from the community is amazing. I highly recommend it!"</p>
+                <div class="student-info">- Sarah Ahmed</div>
+            </div>
+            <div class="testimonial">
+                <p>"I gained practical skills that I could immediately apply in my job. The AI course was fantastic!"</p>
+                <div class="student-info">- Faisal Mehmood</div>
+            </div>
+            <div class="testimonial">
+                <p>"The flexible schedule and affordable courses made it easy for me to continue my education while working full-time."</p>
+                <div class="student-info">- Ayesha Baloch</div>
+            </div>
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="scrollTestimonials('left')">Scroll Left</button>
+            <button class="nav-btn" onclick="scrollTestimonials('right')">Scroll Right</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 E-Learning Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function filterCourses(category) {
+            const courses = document.querySelectorAll('.course-card');
+            courses.forEach(course => {
+                if (category === 'all' || course.dataset.category === category) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+
+        function scrollTestimonials(direction) {
+            const container = document.getElementById('testimonials-container');
+            const scrollAmount = direction === 'left' ? -300 : 300;
+            container.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+</body>
+</html>

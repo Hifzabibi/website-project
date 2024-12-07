@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-learning website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+
+    header {
+            background-color: #1E293B;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="#">
+        <img src="../fyp website//images//header-logo.png" alt="navbar-logo">
+      </a>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="how it work.html">How It Works</a></li>
+      <li><a href="#blog" class="active">Blog</a></li>
+      <li><a href="contact us .html">Contact Us</a></li>
+    </ul>
+    <div class="navbar-buttons">
+      <a href="login.html" class="btn sign-in">Log In</a>
+      <a href="sign up.html" class="btn sign-up">Sign Up</a>
+    </div>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.navbar').classList.toggle('active');
+    });
+  </script>
+
+
+
+<header>
+    Latest Blog Posts
+</header>
+
+<!-- Blog Section -->
+<section class="blog-section">
+    <div class="blog-container">
+  
+      <!-- Blog Post 1 -->
+      <div class="blog-post">
+        <div class="post-image">
+          <img src="images/blog AI.jpeg" alt="Blog Post 1">
+        </div>
+        <div class="post-content">
+          <h3>Getting Started with Artificial Intelligence</h3>
+          <p>Explore the basics of Artificial Intelligence and how it is transforming industries. Discover key concepts and learn how you can start your journey in this exciting field.</p>
+          <a href="blog 1.html" class="read-more">Read More</a>
+        </div>
+      </div>
+  
+      <!-- Blog Post 2 -->
+      <div class="blog-post">
+        <div class="post-image">
+          <img src="images/compiler fundamental.jpeg" alt="Blog Post 2">
+        </div>
+        <div class="post-content">
+          <h3>Compiler Design Fundamentals</h3>
+          <p>Learn about the fundamental concepts of compiler design. This blog post covers the key components of compilers and their importance in programming languages.</p>
+          <a href="blog 2.html" class="read-more">Read More</a>
+        </div>
+      </div>
+  
+      <!-- Blog Post 3 -->
+      <div class="blog-post">
+        <div class="post-image">
+          <img src="images/web development trend.jpeg" alt="Blog Post 3">
+        </div>
+        <div class="post-content">
+          <h3>Web Development Trends in 2024</h3>
+          <p>Stay updated with the latest trends in web development for 2024. Explore the technologies shaping the future of web design and development.</p>
+          <a href="blog 3.html" class="read-more">Read More</a>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+
+  
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        
+        <!-- About Us Section -->
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>We are a dedicated learning platform offering a variety of online courses to help you develop skills and grow in your career. Our mission is to provide affordable and accessible education for everyone.</p>
+        </div>
+  
+        <!-- Quick Links Section -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+  
+        <!-- Contact Info Section -->
+        <div class="footer-column">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Learning Street, Education City</p>
+            <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+            <p><i class="fas fa-envelope"></i> support@learnplatform.com</p>
+        </div>
+  
+        <!-- Social Media Links -->
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        &copy; 2024 LearnPlatform. All rights reserved.
+    </div>
+  </footer>
+  
+  
+</body>
+</html>

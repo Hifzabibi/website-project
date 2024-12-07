@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses - E-Learning Management System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      /* New Header Style */
+      header {
+        background: linear-gradient(
+          to right,
+          #003366,
+          #004080
+        ); /* Dark Blue Gradient */
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header h1 {
+        font-size: 42px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+      }
+
+      .header-btn {
+        display: inline-block;
+        background-color: red;
+        color: white;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      .header-btn:hover {
+        background-color: darkblue;
+      }
+
+      /* Optional: Animated Background Element */
+      header::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: animateCircle 6s linear infinite;
+      }
+
+      @keyframes animateCircle {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-30px, 30px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 32px;
+        }
+        header p {
+          font-size: 16px;
+        }
+      }
+
+      
+        /* Section Styling */
+        .testimonials-section {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff4b2b;
+        }
+
+        /* Testimonials Container */
+        .testimonials-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        .testimonial {
+            background-color: #f8f8f8;
+            border-radius: 15px;
+            padding: 25px;
+            flex: 0 0 300px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial p {
+            font-size: 1em;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .testimonial .student-info {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ff4b2b;
+        }
+        
+        /* Navigation Buttons */
+        .nav-buttons {
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            background-color: #ff4b2b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #ff416c;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-container {
+                flex-direction: column;
+                overflow-x: hidden;
+            }
+        }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="#">
+          <img
+            src="../fyp website//images//header-logo.png"
+            alt="navbar-logo"
+          />
+        </a>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="#courses" class="active">Courses</a></li>
+        <li><a href="how it work.html">How It Works</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact us .html">Contact Us</a></li>
+      </ul>
+      <div class="navbar-buttons">
+        <a href="login.html" class="btn sign-in">Log In</a>
+        <a href="sign up.html" class="btn sign-up">Sign Up</a>
+      </div>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <script>
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".navbar").classList.toggle("active")
+      })
+    </script>
+
+    <header>
+      <h1>Explore Our Top Courses</h1>
+      <p>
+        Learn new skills and advance your career with our expert-led courses.
+      </p>
+    </header>
+
+      <!-- Courses Section -->
+      <section class="courses-section">
+        <h2>Our Featured Courses</h2>
+        <div class="courses-container">
+          <!-- Course 1 (Free) -->
+          <div class="course-card">
+            <img
+              src="images/artifical.jfif"
+              alt="Artificial Intelligence Course" onclick=" ViewMoreDetail()"
+            />
+            <div class="course-label free">Free</div>
+            <h3>Artificial Intelligence</h3>
+            <p class="course-description">
+              Explore the fundamentals of AI, including machine learning, neural
+              networks, and real-world applications.
+            </p>
+            <p class="course-teacher">Instructor: Dr. Anam Iqbal</p>
+            <p class="course-price">Price: PKR 0</p>
+            <p class="course-date">Start Date: January 10, 2025</p>
+            <button class="enroll-btn" onclick="goEnrollment()">Enroll Now</button>
+          </div>
+          <script>
+            function ViewMoreDetail() {
+              window.location.href = "Artificial intelligence.html"
+            }
+          </script>
+          <script>
+            function goEnrollment() {
+              window.location.href = "Enrollment.html"
+            }
+          </script>
+  
+          <!-- Course 2 (Free) -->
+          <div class="course-card">
+            <img src="images/compiler design.jpg" alt="Compiler Design Course" onclick=" ViewMoreDetail()"/>
+            <div class="course-label free">Free</div>
+            <h3>Compiler Design</h3>
+            <p class="course-description">
+              Learn the basics of compiler construction, syntax analysis, and code
+              generation for efficient programming.
+            </p>
+            <p class="course-teacher">Instructor: Dr. Usman Tariq</p>
+            <p class="course-price">Price: PKR 0</p>
+            <p class="course-date">Start Date: February 1, 2025</p>
+            <button class="enroll-btn" onclick="goEnrollment()">Enroll Now</button>
+          </div>
+          <script>
+            function ViewMoreDetail() {
+              window.location.href = "compiler.html"
+            }
+          </script>
+          <script>
+            function goEnrollment() {
+              window.location.href = "Enrollment.html"
+            }
+          </script>
+  
+        <!-- Course 3 (Paid) -->
+        <div class="course-card">
+          <img src="images/web development.jfif" alt="Web Development Course" onclick=" ViewMoreDetail()"/>
+          <div class="course-label paid">Paid</div>
+          <h3>Web Development</h3>
+          <p class="course-description">
+            Master front-end and back-end web development, including HTML, CSS,
+            JavaScript, and server-side programming.
+          </p>
+          <p class="course-teacher">Instructor: Ms. Fatima Sheikh</p>
+          <p class="course-price">Price: PKR 20,000</p>
+          <p class="course-date">Start Date: March 5, 2025</p>
+          <button class="enroll-btn" onclick="goToEnrollment()">Enroll Now</button>
+        </div>
+      </div>
+      <script>
+        function ViewMoreDetail() {
+          window.location.href = "web development.html"
+        }
+      </script>
+      <script>
+        function goToEnrollment() {
+          window.location.href = "paid enrollment.html"
+        }
+      </script>
+      </section>
+
+       <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <h2>What Our Students Say</h2>
+      <div class="testimonials-container" id="testimonials-container">
+          <div class="testimonial">
+              <p>"This platform has completely changed my perspective on online learning. The courses are well-structured and easy to follow."</p>
+              <div class="student-info">- Ali Khan</div>
+          </div>
+          <div class="testimonial">
+              <p>"The instructors are top-notch, and the support from the community is amazing. I highly recommend it!"</p>
+              <div class="student-info">- Sarah Ahmed</div>
+          </div>
+          <div class="testimonial">
+              <p>"I gained practical skills that I could immediately apply in my job. The AI course was fantastic!"</p>
+              <div class="student-info">- Faisal Mehmood</div>
+          </div>
+          <div class="testimonial">
+              <p>"The flexible schedule and affordable courses made it easy for me to continue my education while working full-time."</p>
+              <div class="student-info">- Ayesha Baloch</div>
+          </div>
+      </div>
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+          <button class="nav-btn" onclick="scrollTestimonials('left')">Scroll Left</button>
+          <button class="nav-btn" onclick="scrollTestimonials('right')">Scroll Right</button>
+      </div>
+  </section>
+  <script>
+    function scrollTestimonials(direction) {
+        const container = document.getElementById('testimonials-container');
+        const scrollAmount = direction === 'left' ? -300 : 300;
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- About Us Section -->
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>
+            We are a dedicated learning platform offering a variety of online
+            courses to help you develop skills and grow in your career. Our
+            mission is to provide affordable and accessible education for
+            everyone.
+          </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="footer-column">
+          <h3>Contact Information</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Learning Street, Education
+            City
+          </p>
+          <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+          <p><i class="fas fa-envelope"></i> support@learnplatform.com</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        &copy; 2024 LearnPlatform. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>

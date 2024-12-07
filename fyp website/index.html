@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="#">
+          <img
+            src="../fyp website//images//header-logo.png"
+            alt="navbar-logo"
+          />
+        </a>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="how it work.html">How It Works</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact us .html">Contact Us</a></li>
+      </ul>
+      <div class="navbar-buttons">
+        <a href="login.html" class="btn sign-in">Log In</a>
+        <a href="sign up.html" class="btn sign-up">Sign Up</a>
+      </div>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <script>
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".navbar").classList.toggle("active")
+      })
+    </script>
+
+    <section class="hero-section">
+      <div class="overlay">
+        <div class="hero-content">
+          <h1>Unlock Your Learning Potential</h1>
+          <p>
+            Empower yourself with our expert-led courses designed to enhance
+            your skills, boost your confidence, and open up new opportunities.
+          </p>
+          <button class="btn read-more">Read More</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <!-- Left Side Content -->
+        <div class="about-content">
+          <h2>About Us</h2>
+          <p>
+            Welcome to Techno.pk, your trusted platform for online learning. We
+            offer a wide range of free and paid courses to help you acquire new
+            skills and enhance your knowledge. Whether you're looking to advance
+            your career or start a new hobby, our expert-led courses cater to
+            every learner’s needs. Join our community to experience the best in
+            online education and open new doors of opportunity.
+          </p>
+          <button class="btn join-us" onclick="learnMore()">Learn More</button>
+        </div>
+        <script>
+          function learnMore() {
+            window.location.href = "About.html"
+          }
+        </script>
+
+        <!-- Right Side Info Boxes -->
+        <div class="about-info-boxes">
+          <div class="info-box">
+            <i class="icon">📘</i>
+            <h3>Why Join Us</h3>
+          </div>
+          <div class="info-box">
+            <i class="icon">👤</i>
+            <h3>Who Can Join</h3>
+          </div>
+          <div class="info-box">
+            <i class="icon">❓</i>
+            <h3>What We Offer</h3>
+          </div>
+          <div class="info-box">
+            <i class="icon">📅</i>
+            <h3>Join Now</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+      <h2>Our Featured Courses</h2>
+      <div class="courses-container">
+        <!-- Course 1 (Free) -->
+        <div class="course-card">
+          <img
+            src="images/artifical.jfif"
+            alt="Artificial Intelligence Course" onclick=" ViewMoreDetail()"
+          />
+          <div class="course-label free">Free</div>
+          <h3>Artificial Intelligence</h3>
+          <p class="course-description">
+            Explore the fundamentals of AI, including machine learning, neural
+            networks, and real-world applications.
+          </p>
+          <p class="course-teacher">Instructor: Dr. Anam Iqbal</p>
+          <p class="course-price">Price: PKR 0</p>
+          <p class="course-date">Start Date: January 10, 2025</p>
+          <button class="enroll-btn" onclick="goEnrollment()">Enroll Now</button>
+        </div>
+        <script>
+          function ViewMoreDetail() {
+            window.location.href = "Artificial intelligence.html"
+          }
+        </script>
+        <script>
+          function goEnrollment() {
+            window.location.href = "Enrollment.html"
+          }
+        </script>
+
+        <!-- Course 2 (Free) -->
+        <div class="course-card">
+          <img src="images/compiler design.jpg" alt="Compiler Design Course" onclick=" ViewMoreDetail()"/>
+          <div class="course-label free">Free</div>
+          <h3>Compiler Design</h3>
+          <p class="course-description">
+            Learn the basics of compiler construction, syntax analysis, and code
+            generation for efficient programming.
+          </p>
+          <p class="course-teacher">Instructor: Dr. Usman Tariq</p>
+          <p class="course-price">Price: PKR 0</p>
+          <p class="course-date">Start Date: February 1, 2025</p>
+          <button class="enroll-btn" onclick="goEnrollment()">Enroll Now</button>
+        </div>
+        <script>
+          function ViewMoreDetail() {
+            window.location.href = "compiler.html"
+          }
+        </script>
+        <script>
+          function goEnrollment() {
+            window.location.href = "Enrollment.html"
+          }
+        </script>
+
+        <!-- Course 3 (Paid) -->
+        <div class="course-card">
+          <img src="images/web development.jfif" alt="Web Development Course" onclick=" ViewMoreDetail()"/>
+          <div class="course-label paid">Paid</div>
+          <h3>Web Development</h3>
+          <p class="course-description">
+            Master front-end and back-end web development, including HTML, CSS,
+            JavaScript, and server-side programming.
+          </p>
+          <p class="course-teacher">Instructor: Ms. Fatima Sheikh</p>
+          <p class="course-price">Price: PKR 20,000</p>
+          <p class="course-date">Start Date: March 5, 2025</p>
+          <button class="enroll-btn" onclick="goToEnrollment()">Enroll Now</button>
+        </div>
+      </div>
+      <script>
+        function ViewMoreDetail() {
+          window.location.href = "web development.html"
+        }
+      </script>
+      <script>
+        function goToEnrollment() {
+          window.location.href = "paid enrollment.html"
+        }
+      </script>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+      <h2>How to Enroll in Our Courses</h2>
+      <div class="steps-container">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Browse Courses</h3>
+          <p>
+            Explore our diverse range of courses by navigating through our
+            course catalog.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Select a Course</h3>
+          <p>
+            Choose the course that best fits your needs and click on the course
+            details for more information.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Enroll Now</h3>
+          <p>
+            Click on the "Enroll Now" button, fill out your details, and
+            complete the payment process if applicable.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Start Learning</h3>
+          <p>
+            Access your course materials and start your learning journey with
+            us!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Counter Section -->
+    <div class="counter-section">
+      <div class="counter-container">
+        <div class="counter-item">
+          <i class="fas fa-thumbs-up"></i>
+          <div class="counter-value" data-target="3621328">0</div>
+          <div class="counter-label">Overall Sign-ups</div>
+        </div>
+        <div class="counter-item">
+          <i class="fas fa-clipboard-check"></i>
+          <div class="counter-value" data-target="4574945">0</div>
+          <div class="counter-label">Overall Enrollments</div>
+        </div>
+        <div class="counter-item">
+          <i class="fas fa-user-plus"></i>
+          <div class="counter-value" data-target="301102">0</div>
+          <div class="counter-label">DSTP2.0-Batch-08 Enrollments</div>
+        </div>
+      </div>
+
+      <script>
+        // JavaScript code to animate the counter values
+        document.addEventListener("DOMContentLoaded", () => {
+          const counters = document.querySelectorAll(".counter-value")
+          const speed = 200 // Adjust the speed as necessary
+
+          counters.forEach((counter) => {
+            const updateCount = () => {
+              const target = +counter.getAttribute("data-target")
+              const count = +counter.innerText
+
+              // Calculate increment
+              const increment = target / speed
+
+              // If count is below target, add increment
+              if (count < target) {
+                counter.innerText = Math.ceil(count + increment)
+                setTimeout(updateCount, 20) // Adjust time for smoother or faster animation
+              } else {
+                counter.innerText = target
+              }
+            }
+
+            updateCount()
+          })
+        })
+      </script>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+      <h2>Latest Blog Posts</h2>
+      <div class="blog-container">
+        <!-- Blog Post 1 -->
+        <div class="blog-post">
+          <div class="post-image">
+            <img src="images/blog AI.jpeg" alt="Blog Post 1" />
+          </div>
+          <div class="post-content">
+            <h3>Getting Started with Artificial Intelligence</h3>
+            <p>
+              Explore the basics of Artificial Intelligence and how it is
+              transforming industries. Discover key concepts and learn how you
+              can start your journey in this exciting field.
+            </p>
+            <a href="blog 1.html" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="blog-post">
+          <div class="post-image">
+            <img src="images/compiler fundamental.jpeg" alt="Blog Post 2" />
+          </div>
+          <div class="post-content">
+            <h3>Compiler Design Fundamentals</h3>
+            <p>
+              Learn about the fundamental concepts of compiler design. This blog
+              post covers the key components of compilers and their importance
+              in programming languages.
+            </p>
+            <a href="blog 2.html" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="blog-post">
+          <div class="post-image">
+            <img src="images/web development trend.jpeg" alt="Blog Post 3" />
+          </div>
+          <div class="post-content">
+            <h3>Web Development Trends in 2024</h3>
+            <p>
+              Stay updated with the latest trends in web development for 2024.
+              Explore the technologies and view shaping the future of web design and
+              development.
+            </p>
+            <a href="blog 3.html" class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <p class="faq-description">
+        Find answers to common questions about our E-Learning Management System,
+        including course enrollment, certification, and support.
+      </p>
+      <div class="faq-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I enroll in an online course?
+          </button>
+          <div class="faq-answer">
+            <p>
+              To enroll in an online course, create an account or log in, browse
+              our course catalog, and select the course you're interested in.
+              Follow the enrollment instructions provided on the course page.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I receive a certificate upon completing a course?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, once you successfully complete a course, you will receive a
+              digital certificate that you can download and share with employers
+              or on professional platforms.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the refund policy for paid courses?
+          </button>
+          <div class="faq-answer">
+            <p>
+              We offer a 14-day refund policy for paid courses, as long as you
+              haven't completed more than 20% of the course content. You can
+              request a refund through your dashboard.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            What payment options are available?
+          </button>
+          <div class="faq-answer">
+            <p>
+              We accept various payment methods, including credit cards, PayPal,
+              and bank transfers. Please check the payment page for a full list
+              of supported methods.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Are the courses accessible on mobile devices?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, our platform is fully responsive, so you can access courses
+              on mobile devices, tablets, and desktops with ease.
+            </p>
+          </div>
+        </div>
+
+
+        <!-- FAQ 8 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there technical support available if I encounter issues?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, our support team is available 24/7 to assist you with any
+              technical issues you may encounter. You can reach them through the
+              support section in your dashboard.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-support">
+        <p>Didn’t find what you’re looking for?</p>
+        <a href="contact us .html" class="contact-support-btn" >Contact Support Now</a>
+      </div>
+      <!-- Optional JavaScript for Accordion Effect -->
+      <script>
+        const faqQuestions = document.querySelectorAll(".faq-question")
+
+        faqQuestions.forEach((question) => {
+          question.addEventListener("click", () => {
+            const faqItem = question.parentElement
+            faqItem.classList.toggle("active")
+
+            faqQuestions.forEach((otherQuestion) => {
+              if (otherQuestion !== question) {
+                otherQuestion.parentElement.classList.remove("active")
+              }
+            })
+          })
+        })
+      </script>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- About Us Section -->
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>
+            We are a dedicated learning platform offering a variety of online
+            courses to help you develop skills and grow in your career. Our
+            mission is to provide affordable and accessible education for
+            everyone.
+          </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="footer-column">
+          <h3>Contact Information</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Learning Street, Education
+            City
+          </p>
+          <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+          <p><i class="fas fa-envelope"></i> support@learnplatform.com</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        &copy; 2024 LearnPlatform. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
